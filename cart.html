@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Кошик – EcoStyle</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/cart.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="index.html">EcoStyle</a></h1>
+        <nav>
+            <a href="catalog.html">Каталог</a>
+            <a href="cart.html">Кошик</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Ваш кошик</h2>
+        <div id="cart-items"></div>
+        <p id="total"></p>
+    </main>
+
+    <script src="./scripts/cart.js"></script>
+
+    <!-- <script>
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const container = document.getElementById("cart-items");
+        let total = 0;
+
+        if (cart.length === 0) {
+            container.innerHTML = "<p>Кошик порожній.</p>";
+        } else {
+            cart.forEach(item => {
+                total += item.price * item.quantity;
+                const div = document.createElement("div");
+                div.className = "cart-item";
+                div.innerHTML = `
+                    <h3>${item.name}</h3>
+                    <p>${item.quantity} x ${item.price} грн</p>
+                `;
+                container.appendChild(div);
+            });
+            document.getElementById("total").innerText = `Разом: ${total.toFixed(2)} грн`;
+        }
+    </script> -->
+</body>
+
+</html>

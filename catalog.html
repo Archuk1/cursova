@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог – EcoStyle</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/catalog.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="index.html">EcoStyle</a></h1>
+        <nav>
+            <a href="catalog.html">Каталог</a>
+            <a href="cart.html">Кошик</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Каталог товарів</h2>
+        <div id="product-list" class="products"></div>
+    </main>
+
+    <script src="data/products.js"></script>
+    <script>
+        const container = document.getElementById("product-list");
+        products.forEach(product => {
+            const div = document.createElement("div");
+            div.className = "product";
+            div.innerHTML = `
+        <img src="${product.image}" alt="${product.name}">
+        <h3>${product.name}</h3>
+        <p>${product.price} грн</p>
+        <button onclick="addToCart(${product.id})">Додати в кошик</button>
+      `;
+            container.appendChild(div);
+        });
+
+        function addToCart(id) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const item = cart.find(p => p.id === id);
+            if (item) {
+                item.quantity++;
+            } else {
+                const product = products.find(p => p.id === id);
+                cart.push({ ...product, quantity: 1 });
+            }
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert("Товар додано в кошик!");
+        }
+    </script>
+</body>
+
+</html>

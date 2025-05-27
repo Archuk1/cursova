@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Деталі товару – EcoStyle</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">EcoStyle 🌿</div>
+        <nav class="nav-links">
+            <a href="index.html">Головна</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="about.html">Про нас</a>
+            <a href="contacts.html">Контакти</a>
+            <a href="cart.html">🛒 Кошик</a>
+        </nav>
+    </header>
+
+    <main class="product-detail">
+        <div class="product-container">
+            <img id="product-image" src="assets/images/brush.jpg" alt="Товар" />
+            <div class="product-info">
+                <h1 id="product-title">Назва товару</h1>
+                <p id="product-description">Опис товару...</p>
+                <p id="product-price">Ціна: 0 грн</p>
+                <button class="btn primary">Додати в кошик</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 EcoStyle. Всі права захищено.</p>
+        </div>
+    </footer>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+
+        const products = {
+            1: {
+                title: 'Бамбукова зубна щітка',
+                description: 'Екологічна альтернатива пластиковим щіткам. Повністю біорозкладна.',
+                price: '89 грн',
+                image: 'assets/images/brush.jpg'
+            },
+            2: {
+                title: 'Сумка з льону',
+                description: 'Міцна, стильна та багаторазова сумка для щоденного використання.',
+                price: '199 грн',
+                image: 'assets/images/bag.jpg'
+            },
+            3: {
+                title: 'Мило ручної роботи',
+                description: 'Натуральне мило без хімії, виготовлене вручну.',
+                price: '79 грн',
+                image: 'assets/images/soap.jpg'
+            }
+        };
+
+        const product = products[productId];
+        if (product) {
+            document.getElementById('product-title').textContent = product.title;
+            document.getElementById('product-description').textContent = product.description;
+            document.getElementById('product-price').textContent = `Ціна: ${product.price}`;
+            document.getElementById('product-image').src = product.image;
+            document.getElementById('product-image').alt = product.title;
+        }
+    </script>
+</body>
+
+</html>

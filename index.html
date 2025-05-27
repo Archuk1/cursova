@@ -1,13 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoStyle – Магазин екотоварів</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <h1>Hello, Vadik</h1>
-    <p>ЦЬомік в лобік</p>
-    <img src="./photo_2025-05-26_22-41-58.jpg" alt="Vadik and Oliyka">
+    <header class="navbar">
+        <div class="logo">EcoStyle 🌿</div>
+        <nav class="nav-links">
+            <a href="index.html">Головна</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="about.html">Про нас</a>
+            <a href="contacts.html">Контакти</a>
+            <a href="cart.html">🛒 Кошик</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Екотовари для життя без шкоди природі</h1>
+            <p>Обирай усвідомлено. Купуй відповідально.</p>
+            <a href="catalog.html" class="btn primary">До каталогу</a>
+        </div>
+    </section>
+
+    <section class="featured-products">
+        <h2>Популярні товари</h2>
+        <div class="products">
+            <div class="product-card">
+                <img src="assets/images/brush.jpg" alt="Бамбукова зубна щітка">
+                <h3>Бамбукова зубна щітка</h3>
+                <p>89 грн</p>
+                <a href="product.html?id=1" class="btn">Детальніше</a>
+            </div>
+            <div class="product-card">
+                <img src="assets/images/bag.jpg" alt="Сумка з льону">
+                <h3>Сумка з льону</h3>
+                <p>199 грн</p>
+                <a href="product.html?id=2" class="btn">Детальніше</a>
+            </div>
+            <div class="product-card">
+                <img src="assets/images/soap.jpg" alt="Мило ручної роботи">
+                <h3>Мило ручної роботи</h3>
+                <p>79 грн</p>
+                <a href="product.html?id=3" class="btn">Детальніше</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <img src="assets/icons/leaf.svg" alt="Eco" />
+            <h3>Екологічність</h3>
+            <p>Товари, які не шкодять довкіллю</p>
+        </div>
+        <div class="feature">
+            <img src="assets/icons/recycle.svg" alt="Recycle" />
+            <h3>Багаторазовість</h3>
+            <p>Використовуй знову і знову</p>
+        </div>
+        <div class="feature">
+            <img src="assets/icons/heart.svg" alt="Care" />
+            <h3>Піклування</h3>
+            <p>Про себе і про майбутнє</p>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <h2>Підпишіться на нашу розсилку 💌</h2>
+        <p>Отримуйте новини та спеціальні пропозиції першими!</p>
+        <form id="newsletter-form">
+            <input type="email" placeholder="Ваш email..." required />
+            <button type="submit">Підписатися</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 EcoStyle. Всі права захищено.</p>
+            <div class="socials">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Telegram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("newsletter-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert("Дякуємо за підписку!");
+            this.reset();
+        });
+    </script>
 </body>
+
 </html>
